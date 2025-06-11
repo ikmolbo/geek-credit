@@ -18,9 +18,11 @@ return new class extends Migration
         Schema::create($creditTable, function (Blueprint $table) {
             $table->id();
             $table->morphs('holder');
-            $table->unsignedDecimal('initial_balance', 64, 8)
+            $table->decimal('initial_balance', 64, 8)
+                ->unsigned()
                 ->default(0);
-            $table->unsignedDecimal('remaining_balance', 64, 8)
+            $table->decimal('remaining_balance', 64, 8)
+                ->unsigned()
                 ->default(0);
             $table->dateTime('expires_at')
                 ->nullable()
