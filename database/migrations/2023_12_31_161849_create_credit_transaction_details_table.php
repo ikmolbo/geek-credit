@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(CreditTransaction::class)->constrained();
             $table->foreignIdFor(Credit::class)->constrained();
-            $table->unsignedDecimal('amount', 64, 8);
+            $table->decimal('amount', 64, 8)->unsigned();
         });
     }
 
