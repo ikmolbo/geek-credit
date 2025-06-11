@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('credit_transactions', function (Blueprint $table) {
             $table->id();
             $table->morphs('holder');
-            $table->unsignedDecimal('amount', 64, 8);
+            $table->decimal('amount', 64, 8)->unsigned();
             $table->tinyInteger('type')
                 // ->comment(
                 //     collect(
